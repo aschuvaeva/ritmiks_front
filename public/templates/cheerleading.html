@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritmiks</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__wrapper">
+                <div class="header_mobile-menu">
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <nav class="header_nav">
+                    <ul class="head_list_left">
+                        <li class="head_item_left">
+                            <p class="head_link">Для спортсменов
+                                <img src="../icons/expand_more.svg" alt="">
+                            </p>
+                            <ul class="head_list_2">
+                                <li class="head_item_2">
+                                    <a href="../shedule.html" class="head_link_2">Расписание тренировок</a>
+                                </li>
+                                <li class="head_item_2">
+                                    <a href="../info.html" class="head_link_2">Основная информация</a>
+                                </li>
+                                <li class="head_item_2">
+                                    <a href="../plan.html" class="head_link_2">План тренировок</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="head_item_left">
+                            <p class="head_link">О клубе
+                                <img src="../icons/expand_more.svg" alt="">
+                            </p>
+                            <ul class="head_list_2">
+                                <li class="head_item_2">
+                                    <a href="../blog.html" class="head_link_2">Блог клуба</a>
+                                </li>
+                                <li class="head_item_2">
+                                    <a href="../philosophy.html" class="head_link_2">Философия</a>
+                                </li>
+                                <li class="head_item_2">
+                                    <a href="../results.html" class="head_link_2">Достижения</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="head_item_left">
+                            <p class="head_link">Направления
+                                <img src="../icons/expand_more.svg" alt="">
+                            </p>
+                            <ul class="head_list_2">
+                                <li class="head_item_2">
+                                    <a href="../cheerleading.html" class="head_link_2">Чирлидинг</a>
+                                </li>
+                                <li class="head_item_2">
+                                    <a href="../freestyle.html" class="head_link_2">Фристайл</a>
+                                </li>
+                                <li class="head_item_2">
+                                    <a href="../acro.html" class="head_link_2">Акробатика</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="logo">
+                        <a href="../index.html" class="logo_link">
+                            <img src="../icons/logo_black.png" alt="Ritmiks" class="logo_pic">
+                        </a>
+                    </div>
+                    <ul class="head_list_right">
+                        <li class="head_item_right">
+                            <a href="../reviews.html" class="head_link">Отзывы</a>
+                        </li>
+                        <li class="head_item_right" style="margin-right: 30px;">
+                            <a href="../contacts.html" class="head_link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tele">
+                    <div class="tele_logo">
+                        <div class="logo_tel">
+                            <a href="https://t.me/ritmikscheer">
+                                <img src="../icons/tg.svg" alt="" class="social">
+                            </a>
+                        </div>
+                        <div class="logo_tel">
+                            <a href="https://wa.me/+79775258997">
+                                <img src="../icons/wa.svg" alt="" class="social">
+                            </a>
+                        </div>
+                        <div class="logo_tel">
+                            <a href="https://www.instagram.com/ritmikscheer">
+                                <img src="../icons/inst.svg" alt="" class="social">
+                            </a>
+                        </div>
+                    </div>
+                    <a href="tel:79775258997" class="tele_link">+7 (977) 525-89-97</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="intro_cheer">
+                <div class="wrapper_intro">
+                    <h1 class="title_intro">Чирлидинг в Москве</h1>
+                    <p class="text_intro">На сегодняшний день наш клуб уже воспитал <strong>9 Мастеров спорта</strong> по чирлидингу и несколько сотен
+                         спортсменов, имеющих различные разряды, начиная от массовых юношеских до кандидатов в мастера спорта России</p>
+                    <div class="buttons_intro">
+                        <button class="but_intro_1" id="openModalButton" onclick="setupModal('modal', 'openModalButton', '.close');">
+                            <p class="text_but_intro">Записаться в команду</p>
+                        </button>
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3 class="title_form"><strong>Заявка</strong> <br>на пробную тренировку</h3>
+                                <form class="form_reg" id="registrationForm" action="/submit_cheer" method="post">
+                                    <div class="input_form">
+                                        <input name="name" class="input-field" type="text" placeholder="Ваше Имя" required>
+                                        <input name="year" class="input-field" type="year" placeholder="Год рождения" required>
+                                        <input name="phone" class="input-field" type="tel" placeholder="Телефон" required>
+                                    </div>
+                                    <p class="title_form">Дисциплина</p>
+                                    <select name="discipline" class="select-field">
+                                        <option value="Чирлидинг">Чирлидинг</option>
+                                        <option value="Фристайл">Фристайл</option>
+                                        <option value="Акробатика">Акробатика</option>
+                                        <option value="Затрудняюсь ответить">Затрудняюсь ответить</option>
+                                    </select>
+                                    <button class="bur_form" type="submit">Отправить</button>
+                                </form>
+                            </div>
+                        </div>
+                        <button class="but_intro_2" onclick="openVideo()">
+                            <p class="text_but_intro">Смотреть видео</p>
+                        </button>
+
+                        <div id="videoModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeVideo()">&times;</span>
+                                <iframe width="840" height="473" src="https://www.youtube.com/embed/5IXZ0bAt5d0?si=WfA-ONkzuS8DWSDz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <img src="../img/cheerleading.jpg" alt="" class="intro_img">
+            <div class="overlay"></div>
+        </section>
+        <section class="description">
+            <div class="wrapper">
+                <h2 class="title_blue">Что такое чирлидинг?</h2>
+                <div class="descr_text_photo">
+                    <p class="descr_text"><strong>Чирлидинг</strong> - относительно молодой вид спорта.
+                        Он объединяет в себе <strong>акробатику</strong>, <strong>хореографию</strong> и <strong>силовую нагрузку</strong>.
+                        Развивает силу, выносливость, гибкость, баланс и координацию.<br><br>
+                        Чирлидинг официально признанный вид спорта. А значит, наши спортсмены получают спортивные разряды и звания.
+                         В Токио в рамках 138-й сессии МОК, решением от 20 июля Чирлидинг получил статус ОЛИМПИЙСКОГО вида спорта!
+                         International Cheer Union (ICU) - получил полное признание МОК! Соревнования по чир спорту -
+                          это всегда невероятно зрелищное и захватывающее событие.</p>
+                    <img src="../img/cheer_descr.jpg" alt="" class="descr_img">
+                </div>
+            </div>
+        </section>
+        <section class="age_categ">
+            <div class="wrapper">
+                <h2 class="title_white">Возрастные категории</h2>
+                <div class="age_categ_wrapper">
+                    <div class="categ_circle">
+                        <div class="circle_top">
+                            <div class="circle_text">
+                                <div class="circle">
+                                    <img src="../img/cheer_ag1.jpg" alt="">
+                                </div>
+                                <h3 class="name_categ">Младшие дети</h3>
+                                <p class="text_categ">5-7 лет</p>
+                            </div>
+                            <div class="circle_text">
+                                <div class="circle">
+                                    <img src="../img/cheer_ag2.jpg" alt="">
+                                </div>
+                                <h3 class="name_categ">Мальчики/девочки</h3>
+                                <p class="text_categ">8-11 лет</p>
+                            </div>
+                        </div>
+                        <div class="circle_bottom">
+                            <div class="circle_text">
+                                <div class="circle">
+                                    <img src="../img/cheer_ag3.jpg" alt="">
+                                </div>
+                                <h3 class="name_categ">Юноши/девушки</h3>
+                                <p class="text_categ">12-14 лет</p>
+                            </div>
+                            <div class="circle_text">
+                                <div class="circle">
+                                    <img src="../img/cheer_ag4.jpg" alt="">
+                                </div>
+                                <h3 class="name_categ">Юниоры/юниорки</h3>
+                                <p class="text_categ">15-18 лет</p>
+                            </div>
+                            <div class="circle_text">
+                                <div class="circle">
+                                    <img src="../img/cheer_ag5.jpg" alt="">
+                                </div>
+                                <h3 class="name_categ">Мужчины/женщины</h3>
+                                <p class="text_categ">16 лет и старше</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text_age_categ">Принимаем <strong>всех желающих</strong> во всех возрастных группах, если нет медицинских противопоказаний,
+                         в том числе из других видов спорта, с разной степенью спортивной подготовки и без нее</p>
+                </div>
+            </div>
+        </section>
+        <section class="coaches">
+            <div class="wrapper">
+                <h2 class="title_blue">Тренерский состав</h2>
+                <div class="text_coaches">
+                    <p class="text_coach">Все тренеры клуба являются <strong>профессионалами</strong> своего дела,
+                         имеют высшее профильное образование и сертификацию Федерации чир спорта</p>
+                    <div class="coaches_all">
+                        <div class="coaches_top">
+                            <div class="coach_info" data-info="Этого тренера обожают и дети, и родители детей! Настоящий профессионал своего дела, прививающий детям любовь к занятиям спортом, ответственность работы в команде, дающий мотивацию и развивающий желание покорять новые вершины спортивного мастерства!">
+                                <div class="coach">
+                                    <div class="background"></div>
+                                    <img src="../img/cheer_coach1.png" alt="" class="photo_coach">
+                                </div>
+                                <h3 class="name_coach">Галина Ивановна Ковалева</h3>
+                                <p class="about_coach">Тренер начальной подготовки по чирлидингу, level 1 и 2</p>
+                            </div>
+                            <div class="coach_info" style="margin-top: -60px;" data-info="За 15 лет работы клуба подготовила 9 Мастеров спорта России и десятки Кандидатов в мастера спорта. Аккредитованный тренер и судья международной федерации ICU. Тренер взрослого состава Талисман.">
+                                <div class="coach">
+                                    <div class="background"></div>
+                                    <img src="../img/cheer_coach2.png" alt="" class="photo_coach">
+                                </div>
+                                <h3 class="name_coach">Марина Юрьевна Шемчук</h3>
+                                <p class="about_coach">Главный тренер клуба, тренер по чирлидингу, level 1-6</p>
+                            </div>
+                            <div class="coach_info spec" data-info="Тренер взрослого состава Талисман по стантовой подготовке, Мастер Спорта России по чир спорту, действующий спортсмен.">
+                                <div class="coach">
+                                    <div class="background"></div>
+                                    <img src="../img/cheer_coach3.png" alt="" class="photo_coach">
+                                </div>
+                                <h3 class="name_coach">Артур Олегович Мартыневский</h3>
+                                <p class="about_coach">Тренер по чирлидингу, level 6</p>
+                            </div>
+                        </div>
+                        <div class="coaches_bottom">
+                            <div class="coach_info" data-info="Молодой перспективный тренер, воспитанница нашего клуба, начинавшая свою карьеру в нашей детской команде, став вице чемпионкой Европы и достигшая звания Мастера спорта. Тренер топового детского состава Ритмикс и юношеского состава Талисман систерс.">
+                                <div class="coach">
+                                    <div class="background"></div>
+                                    <img src="../img/cheer_coach4.png" alt="" class="photo_coach">
+                                </div>
+                                <h3 class="name_coach">Софья Павловна Суркова</h3>
+                                <p class="about_coach">Тренер по чирлидингу, level 3 и 4</p>
+                            </div>
+                            <div class="coach_info" data-info="Целеустремленный и яркий тренер юниорского состава команды Талисман, Мастер Спорта России по чир спорту, действующий спортсмен и капитан взрослого состава Талисман, воспитанница клуба.">
+                                <div class="coach">
+                                    <div class="background"></div>
+                                    <img src="../img/cheer_coach5.png" alt="" class="photo_coach">
+                                </div>
+                                <h3 class="name_coach">Валерия Сергеевна Иванова</h3>
+                                <p class="about_coach">Тренер по чирлидингу, level 5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="info_about">
+            <div class="wrapper">
+                <h2 class="title_white">Что нужно, чтобы попасть в команду?</h2>
+                <div class="info_part">
+                    <img src="../img/info_cheer1.jpg" alt="" class="photo_info">
+                    <p class="text_info1">Главным достоинством чирлидинга является его истинная <strong>демократичность</strong>!
+                         Каждый участник команды уникален и ценен.
+                          В этом виде спорта роли в команде различны и каждый сможет проявить себя и раскрыться в полной мере.
+                           Так что, даже если вам кажется, что у вас совершенно не спортивная фигура или нет способностей к спорту
+                            - это заблуждение, которое с лёгкостью развеется на тренировках по чирлидингу.
+                             Единственным необходимым требованием является характер - <strong>целеустремлённость</strong>,
+                              <strong>желание зажечь</strong> окружающих своей энергией, <strong>воля к победе</strong>, вот необходимые качества для чирлидера</p>
+                </div>
+                <hr class="line_info">
+                <h2 class="title_white">Сколько стоят занятия?</h2>
+                <div class="info_part">
+                    <div class="texts">
+                        <p class="text_info2_1">
+                            Мы хотим, чтобы чирлидинг развивался, завоевывая все больше сердец,
+                         поэтому мы сделали наши тренировки максимально доступными для вас
+                        </p>
+                        <p class="text_info2_2">
+                            Стоимость абонемента <strong>от 6700 рублей/мес</strong> при графике занятий 3р/нед.,
+                         а также мы предоставляем скидки семьям, где тренировки в нашем клубе посещают двое и более детей,
+                          а также даем скидки спортсменам посещающим тренировки в нескольких командах клуба
+                        </p>
+                    </div>
+                    <img src="../img/info_cheer2.jpg" alt="" class="photo_info" style="margin-right: 65px;">
+                </div>
+                <hr class="line_info">
+                <div class="info_part" style="margin-top: 40px;">
+                    <p class="text_end_info">
+                        Хотите в команду? <strong>Всё просто!</strong> Заполните заявку или позвоните/напишите нам в
+                         WatsApp по телефону 8(977) 525-89-97
+                    </p>
+                    <button class="button_sign" id="opModalButton" onclick="setupModal('modal', 'opModalButton', '.close');">
+                        <p class="text_button">Заявка на пробное занятие</p>
+                    </button>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3 class="title_form"><strong>Заявка</strong> <br>на пробную тренировку</h3>
+                            <form class="form_reg" id="registrationForm" action="/submit_dis" method="post">
+                                <div class="input_form">
+                                    <input name="name" class="input-field" type="text" placeholder="Ваше Имя" required>
+                                    <input name="year" class="input-field" type="year" placeholder="Год рождения" required>
+                                    <input name="phone" class="input-field" type="tel" placeholder="Телефон" required>
+                                </div>
+                                <p class="title_form">Дисциплина</p>
+                                <select name="discipline" class="select-field">
+                                    <option value="Чирлидинг">Чирлидинг</option>
+                                    <option value="Фристайл">Фристайл</option>
+                                    <option value="Акробатика">Акробатика</option>
+                                    <option value="Затрудняюсь ответить">Затрудняюсь ответить</option>
+                                </select>
+
+                                <button class="bur_form" type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer">
+            <div class="wrapper">
+                <div class="footer_wrapper">
+                    <div class="logo_footer">
+                        <div class="logo_rit_footer">
+                            <a href="/" class="logo_link_footer">
+                                <img src="../icons/logo_black.png" alt="Ritmiks" class="logo_pic">
+                            </a>
+                        </div>
+                        <div class="tele_footer">
+                            <div class="tele_logo_footer">
+                                <div class="logo_tel_footer">
+                                    <a href="https://t.me/ritmikscheer">
+                                        <img src="../icons/tg.svg" alt="" class="social">
+                                    </a>
+                                </div>
+                                <div class="logo_tel_footer">
+                                    <a href="https://wa.me/+79775258997">
+                                        <img src="../icons/wa.svg" alt="" class="social">
+                                    </a>
+                                </div>
+                                <div class="logo_tel_footer">
+                                    <a href="https://www.instagram.com/ritmikscheer">
+                                        <img src="../icons/inst.svg" alt="" class="social">
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="tel:79775258997" class="tele_link_footer">+7 (977) 525-89-97</a>
+                            </div>
+                        </div>
+                        <p class="foot_text">© СК "Ритмикс" 2024</p>
+                    </div>
+                    <nav class="nav_footer">
+                        <ul class="list_footer">
+                            <li class="item_footer">
+                                <p class="text_item">Направления</p>
+                                <ul class="list_footer_2">
+                                    <li class="item_footer_2">
+                                        <a href="/cheerleading" class="foot_link">Чирлидинг</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/freestyle" class="foot_link">Фристайл</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/acro" class="foot_link">Акробатика</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item_footer">
+                                <p class="text_item">О клубе</p>
+                                <ul class="list_footer_2">
+                                    <li class="item_footer_2">
+                                        <a href="/blog" class="foot_link">Блог клуба</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/philosophy" class="foot_link">Философия</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/reviews" class="foot_link">Отзывы</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/contacts" class="foot_link">Контакты</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/results" class="foot_link">Достижения</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item_footer">
+                                <p class="text_item">Для спортсменов</p>
+                                <ul class="list_footer_2">
+                                    <li class="item_footer_2">
+                                        <a href="/shedule" class="foot_link">Расписание тренировок</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/info" class="foot_link">Основная информация</a>
+                                    </li>
+                                    <li class="item_footer_2">
+                                        <a href="/plan" class="foot_link">План тренировок</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer_copyright-xs">
+                    © СК "Ритмикс" 2024
+                </div>
+            </div>
+        </section>
+    </footer>
+<div class="mobile-menu">
+    <div class="mobile-menu-list">
+        <nav class="nav_footer">
+            <ul class="list_footer">
+                <li class="item_footer">
+                    <p class="text_item">Направления</p>
+                    <ul class="list_footer_2">
+                        <li class="item_footer_2">
+                            <a href="/cheerleading" class="foot_link">Чирлидинг</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/freestyle" class="foot_link">Фристайл</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/acro" class="foot_link">Акробатика</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item_footer">
+                    <p class="text_item">О клубе</p>
+                    <ul class="list_footer_2">
+                        <li class="item_footer_2">
+                            <a href="/blog" class="foot_link">Блог клуба</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/philosophy" class="foot_link">Философия</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/reviews" class="foot_link">Отзывы</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/contacts" class="foot_link">Контакты</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/results" class="foot_link">Достижения</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item_footer">
+                    <p class="text_item">Для спортсменов</p>
+                    <ul class="list_footer_2">
+                        <li class="item_footer_2">
+                            <a href="/shedule" class="foot_link">Расписание тренировок</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/info" class="foot_link">Основная информация</a>
+                        </li>
+                        <li class="item_footer_2">
+                            <a href="/plan" class="foot_link">План тренировок</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<script>
+    const container = document.querySelector(".header_mobile-menu");
+    const container2 = document.querySelector(".mobile-menu");
+
+    container.onclick = function(){
+        container2.classList.toggle("active");
+    }
+</script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
